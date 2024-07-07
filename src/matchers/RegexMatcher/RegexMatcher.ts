@@ -8,11 +8,6 @@ import { RegexMatchOptions, RegexMatcherConfig } from './types';
  */
 class RegexMatcher extends MatcherBase<string | RegExp, RegexMatchOptions, RegexMatcherConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'regex';
-
-  /**
    * 代替種別
    */
   static ALTS = ['re', 'regexp'];

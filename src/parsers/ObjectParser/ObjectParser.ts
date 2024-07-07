@@ -4,11 +4,6 @@ import { ObjectParseOptions, ObjectParserConfig } from './types';
 
 class ObjectParser extends ParserBase<any, ObjectParseOptions, ObjectParserConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'object';
-
-  /**
    * オブジェクトへのパース
    * @param value JSON文字列
    * @param config コンフィグ

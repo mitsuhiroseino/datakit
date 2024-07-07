@@ -1,9 +1,9 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 
 /**
- * examineメソッドのオプション
+ * evaluateメソッドのオプション
  */
-export type ExamineOptions<V = any> = FactoryableConfig & {
+export type EvaluateOptions<V = any> = IdentifiableConfig & {
   /**
    * 条件となる値
    */
@@ -13,7 +13,7 @@ export type ExamineOptions<V = any> = FactoryableConfig & {
 /**
  * コンフィグ
  */
-export type RelationalOperatorConfig<V = any> = FactoryableConfig & {
+export type RelationalOperatorConfig<V = any> = IdentifiableConfig & {
   /**
    * 条件となる値
    */
@@ -23,10 +23,10 @@ export type RelationalOperatorConfig<V = any> = FactoryableConfig & {
 /**
  * データを読み込む
  */
-export interface IRelationalOperator<V = any, O extends ExamineOptions<V> = ExamineOptions<V>> extends IFactoryable {
+export interface RelationalOperator<V = any, O extends EvaluateOptions<V> = EvaluateOptions<V>> extends Identifiable {
   /**
    * 条件に一致するか検証する
    * @param target 検証対象の値
    */
-  examine(target: V, options: O): boolean;
+  evaluate(target: V, options: O): boolean;
 }

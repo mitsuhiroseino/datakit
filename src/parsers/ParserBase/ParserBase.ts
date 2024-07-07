@@ -1,7 +1,7 @@
 import Base from '@visue/core/base/Base';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import toValidValue from '@visue/utils/lang/toValidValue';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IParser } from '../types';
+import { Parser } from '../types';
 import { ParseOptionsBase, ParserConfigBase } from './types';
 
 export default abstract class ParserBase<
@@ -10,19 +10,9 @@ export default abstract class ParserBase<
     C extends ParserConfigBase = ParserConfigBase,
   >
   extends Base<C>
-  implements IParser<R, O>
+  implements Parser<R, O>
 {
   readonly isParser = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'parser';
-
-  /**
-   * コンフィグ以外の状態を持たない
-   */
-  static readonly STATELESS = true;
 
   /**
    * ID
@@ -30,13 +20,13 @@ export default abstract class ParserBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
   parse(value: any, options?: O): R {

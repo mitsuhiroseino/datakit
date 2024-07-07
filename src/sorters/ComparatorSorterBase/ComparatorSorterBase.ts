@@ -1,4 +1,4 @@
-import { IComparator } from '../../comparators';
+import { Comparator } from '../../comparators';
 import SorterBase from '../SorterBase';
 import { ComparatorCompareOptionsBase, ComparatorSorterConfigBase } from './types';
 
@@ -13,7 +13,7 @@ export default abstract class ComparatorSorterBase<
   /**
    * コンパレーター
    */
-  private _comparator?: IComparator;
+  private _comparator?: Comparator;
 
   protected get comparator() {
     if (this._comparator == null) {
@@ -24,7 +24,7 @@ export default abstract class ComparatorSorterBase<
     return this._comparator;
   }
 
-  protected abstract _createComparator(config: C): IComparator;
+  protected abstract _createComparator(config: C): Comparator;
 
   /**
    * 条件に一致するか

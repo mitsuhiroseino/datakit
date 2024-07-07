@@ -4,11 +4,6 @@ import { BooleanFormatOptions, BooleanFormatterConfig } from './types';
 
 class BooleanFormatter extends FormatterBase<boolean, BooleanFormatOptions, BooleanFormatterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'boolean';
-
-  /**
    * 真偽値のフォーマット
    * @param value 真偽値
    * @param config コンフィグ

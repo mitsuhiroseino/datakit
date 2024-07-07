@@ -6,11 +6,6 @@ import { DateComparatorConfig, DateCompareOptions } from './types';
  * 日時の比較
  */
 class DateComparator extends ComparatorBase<Date, DateCompareOptions, DateComparatorConfig> {
-  /**
-   * 種別
-   */
-  static TYPE = 'date';
-
   protected _compare(value1: Date, value2: Date, config: DateComparatorConfig): number {
     return compare(value1, value2, config);
   }

@@ -1,5 +1,5 @@
 import isString from 'lodash/isString';
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import RegexMatcher from '../../matchers/RegexMatcher';
 import MatcherFilterBase, { MatcherFilterConfigBase } from '../MatcherFilterBase';
 import { RegexFilterConfig, RegexMatchOptions } from './types';
@@ -8,16 +8,6 @@ import { RegexFilterConfig, RegexMatchOptions } from './types';
  * 正規表現のフィルター
  */
 export default class RegexFilter extends MatcherFilterBase<RegExp | string, RegexMatchOptions, RegexFilterConfig> {
-  /**
-   * 種別
-   */
-  static TYPE = 'regex';
-
-  /**
-   * 代替種別
-   */
-  static ALTS = ['re', 'regexp'];
-
   /**
    * 正規表現
    */
@@ -33,7 +23,7 @@ export default class RegexFilter extends MatcherFilterBase<RegExp | string, Rege
     }
   }
 
-  protected _createMatcher(config: MatcherFilterConfigBase): IMatcher {
+  protected _createMatcher(config: MatcherFilterConfigBase): Matcher {
     return new RegexMatcher(config);
   }
 

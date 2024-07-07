@@ -1,5 +1,5 @@
 import { IDestructible } from '@visue/core/base/DestructibleBase';
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ExtractorConfig } from '../extractors';
 import { ObjectExtractOptions } from '../extractors/ObjectExtractor';
 
@@ -16,7 +16,7 @@ export type CompareOptions = {
 /**
  * コンフィグ
  */
-export type SorterConfig = FactoryableConfig &
+export type SorterConfig = IdentifiableConfig &
   Pick<ObjectExtractOptions, 'path'> &
   CompareOptions & {
     /**
@@ -28,7 +28,7 @@ export type SorterConfig = FactoryableConfig &
 /**
  * ソーターのインターフェイス
  */
-export interface ISorter<O extends CompareOptions = CompareOptions> extends IFactoryable, IDestructible {
+export interface Sorter<O extends CompareOptions = CompareOptions> extends Identifiable, IDestructible {
   /**
    * Sorterのインスタンスであるか
    */

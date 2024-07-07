@@ -1,4 +1,4 @@
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import BooleanMatcher from '../../matchers/BooleanMatcher';
 import MatcherFilterBase, { MatcherFilterConfigBase } from '../MatcherFilterBase';
 import { BooleanFilterConfig, BooleanMatchOptions } from './types';
@@ -11,12 +11,7 @@ export default class BooleanFilter extends MatcherFilterBase<
   BooleanMatchOptions<boolean>,
   BooleanFilterConfig<boolean>
 > {
-  /**
-   * 種別
-   */
-  static TYPE = 'boolean';
-
-  protected _createMatcher(config: MatcherFilterConfigBase): IMatcher {
+  protected _createMatcher(config: MatcherFilterConfigBase): Matcher {
     return new BooleanMatcher(config);
   }
 }

@@ -4,11 +4,6 @@ import { BooleanParseOptions, BooleanParserConfig } from './types';
 
 class BooleanParser extends ParserBase<boolean, BooleanParseOptions, BooleanParserConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'boolean';
-
-  /**
    * 日付文字列のパース
    * @param value 日付文字列
    * @param config コンフィグ

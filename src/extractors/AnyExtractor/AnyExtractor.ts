@@ -5,11 +5,6 @@ import { AnyExtractOptions, AnyExtractorConfig } from './types';
  * 任意の値からの抽出器
  */
 class AnyExtractor<S = any, V = any> extends ExtractorBase<S, V, AnyExtractOptions, AnyExtractorConfig<S, V>> {
-  /**
-   * 種別
-   */
-  static TYPE = 'any';
-
   protected _validate(source: S, config: AnyExtractorConfig<S, V>): boolean {
     return config.validate ? config.validate(source, config) : true;
   }

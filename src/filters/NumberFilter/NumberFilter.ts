@@ -1,4 +1,4 @@
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import NumberMatcher from '../../matchers/NumberMatcher';
 import MatcherFilterBase, { MatcherFilterConfigBase } from '../MatcherFilterBase';
 import { NumberFilterConfig, NumberMatchOptions } from './types';
@@ -11,12 +11,7 @@ export default class NumberFilter extends MatcherFilterBase<
   NumberMatchOptions<number>,
   NumberFilterConfig<number>
 > {
-  /**
-   * 種別
-   */
-  static TYPE = 'number';
-
-  protected _createMatcher(config: MatcherFilterConfigBase): IMatcher {
+  protected _createMatcher(config: MatcherFilterConfigBase): Matcher {
     return new NumberMatcher(config);
   }
 }

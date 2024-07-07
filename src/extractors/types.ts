@@ -1,4 +1,4 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 
 /**
  * extractメソッドのオプション
@@ -13,12 +13,12 @@ export type ExtractOptions = {
 /**
  * コンフィグ
  */
-export type ExtractorConfig = FactoryableConfig & ExtractOptions;
+export type ExtractorConfig = IdentifiableConfig & ExtractOptions;
 
 /**
  * 任意の型のデータから特定の値(プロパティ)を取得するクラスのインターフェイス
  */
-export interface IExtractor<S = any, V = any, O extends ExtractOptions = ExtractOptions> extends IFactoryable {
+export interface Extractor<S = any, V = any, O extends ExtractOptions = ExtractOptions> extends Identifiable {
   /**
    * Extractorのインスタンスであるか
    */

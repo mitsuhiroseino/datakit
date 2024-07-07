@@ -6,11 +6,6 @@ import { OrFilterConfig, OrMatchOptions } from './types';
  */
 export default class OrFilter extends CompoundFilterBase<OrMatchOptions, OrFilterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'or';
-
-  /**
    * 条件に一致するか
    * @param value 検証対象
    * @returns 検証結果

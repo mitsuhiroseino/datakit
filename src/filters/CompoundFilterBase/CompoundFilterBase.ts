@@ -1,6 +1,6 @@
+import { Creator } from '@visue/factory/easy';
 import FilterBase from '../FilterBase';
-import FilterFactory from '../FilterFactory';
-import { IFilter } from '../types';
+import { Filter } from '../types';
 import { CompoundFilterConfigBase, CompoundMatchOptionsBase } from './types';
 
 export default abstract class CompoundFilterBase<
@@ -10,10 +10,10 @@ export default abstract class CompoundFilterBase<
   /**
    * 比較用のコンディション
    */
-  protected _items: IFilter[];
+  protected _items: Filter[];
 
   constructor(config?: C) {
     super(config);
-    this._items = FilterFactory.from(this.config.items);
+    this._items = Creator.from('filter', this.config.items);
   }
 }

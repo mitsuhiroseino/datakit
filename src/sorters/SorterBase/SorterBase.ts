@@ -1,8 +1,8 @@
 import DestructibleBase from '@visue/core/base/DestructibleBase';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import ExtractorFactory from '../../extractors/ExtractorFactory';
 import ObjectExtractor from '../../extractors/ObjectExtractor';
-import initFactoryable from '../../helpers/initFactoryable';
-import { ISorter } from '../types';
+import { Sorter } from '../types';
 import { CompareOptionsBase, SorterConfigBase } from './types';
 
 /**
@@ -14,14 +14,9 @@ export default abstract class SorterBase<
     C extends SorterConfigBase = SorterConfigBase,
   >
   extends DestructibleBase<C>
-  implements ISorter<O>
+  implements Sorter<O>
 {
   readonly isSorter = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'sorter';
 
   /**
    * ID
@@ -29,9 +24,9 @@ export default abstract class SorterBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   /**
    * 値抽出器
@@ -40,10 +35,10 @@ export default abstract class SorterBase<
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
     const { extractor, path } = this.config;
     if (extractor) {
-      this._extractor = ExtractorFactory.create(extractor);
+      this._extractor = ExtractorFactory.get(extractor);
     } else if (path != null) {
       this._extractor = new ObjectExtractor({ path });
     }

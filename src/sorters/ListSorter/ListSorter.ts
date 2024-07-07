@@ -5,11 +5,6 @@ import { ListCompareOptions, ListSorterConfig } from './types';
  * 任意の順番で設定されたリストに沿った比較
  */
 export default class ListSorter extends SorterBase<any, ListCompareOptions, ListSorterConfig> {
-  /**
-   * 種別
-   */
-  static TYPE = 'list';
-
   protected _compare(value1: any, value2: any, config: ListSorterConfig): number {
     const order = config.order,
       index1 = order.indexOf(value1),

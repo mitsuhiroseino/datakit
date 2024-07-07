@@ -5,11 +5,6 @@ import { StringFormatOptions, StringFormatterConfig } from './types';
 
 class StringFormatter extends FormatterBase<string, StringFormatOptions, StringFormatterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'string';
-
-  /**
    * トークン抽出関数
    */
   private _extractTokensFn?: ExtractTokensFn;

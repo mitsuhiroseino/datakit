@@ -2594,9 +2594,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@visue/core@workspace:.":
+"@visue/core@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@visue/core@npm:0.1.0"
+  dependencies:
+    bignumber.js: "npm:^9.1.1"
+    date-fns: "npm:^2.29.3"
+    geolib: "npm:^3.3.4"
+    iconv-lite: "npm:^0.6.3"
+    lodash: "npm:^4.17.21"
+    nanoid: "npm:^4.0.1"
+  checksum: 10c0/da8890fb6888e4bf3eb68e4ea768fc7d35937e92b84426031d1e2b63620545ebd0a7628ee617e6e9fbfa034d69edfad37039b22e8aff3e40033b1fe5f899d6c7
+  languageName: node
+  linkType: hard
+
+"@visue/datakit@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@visue/core@workspace:."
+  resolution: "@visue/datakit@workspace:."
   dependencies:
     "@babel/core": "npm:^7.17.9"
     "@babel/plugin-transform-modules-commonjs": "npm:^7.21.2"
@@ -2613,7 +2627,10 @@ __metadata:
     "@types/jsesc": "npm:^3"
     "@types/lodash": "npm:^4.14.195"
     "@types/lodash-es": "npm:^4.17.6"
+    "@visue/core": "npm:^0.1.0"
     "@visue/dev": "npm:^0.1.0"
+    "@visue/factory": "npm:^0.1.0"
+    "@visue/utils": "npm:^0.1.1"
     babel-jest: "npm:^29.5.0"
     bignumber.js: "npm:^9.1.1"
     date-fns: "npm:^2.29.3"
@@ -2647,6 +2664,31 @@ __metadata:
     fs-extra: "npm:^11.0.1"
     lodash: "npm:^4.17.21"
   checksum: 10c0/81bf23a44680a8c1c8cee0dc27e414f250973535d66e9bc90c3a5d7b2f3249600bbdc93deaeca93cb442ad5b09da97d71b82b56cf09778ea000c3c8bd287ad62
+  languageName: node
+  linkType: hard
+
+"@visue/factory@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "@visue/factory@npm:0.1.0"
+  dependencies:
+    "@visue/utils": "npm:^0.1.1"
+  checksum: 10c0/1d46a28a313ebc4731e8185af1c1d1d2d2364ff9d2114ec28a2b686fc9823b506957f261a2d93d068f8c97b936689fbee1c67624c119628f4c5840bf254ad845
+  languageName: node
+  linkType: hard
+
+"@visue/utils@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@visue/utils@npm:0.1.1"
+  dependencies:
+    bignumber.js: "npm:^9.1.1"
+    date-fns: "npm:^2.29.3"
+    geolib: "npm:^3.3.4"
+    iconv-lite: "npm:^0.6.3"
+    jsesc: "npm:^3.0.2"
+    lodash: "npm:^4.17.21"
+    nanoid: "npm:^4.0.1"
+    uuid: "npm:^10.0.0"
+  checksum: 10c0/57558e1b0b9dd3f77d8e733d93a33ed9c4b7cc284109c73a16cf1c8705af83e2791ddd82e89e7e50ba4b8afabaa1f49aa897dcefda72b9788d087c8dbfaf356b
   languageName: node
   linkType: hard
 
@@ -7378,6 +7420,15 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10c0/41a5bdd214df2f6c3ecf8622745e4a366c4adced864bc3c833739791aeeeb1838119af7daed4ba36428114b5c67dcda034a79c882e97e43c03e66a4dd7389942
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "uuid@npm:10.0.0"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10c0/eab18c27fe4ab9fb9709a5d5f40119b45f2ec8314f8d4cf12ce27e4c6f4ffa4a6321dc7db6c515068fa373c075b49691ba969f0010bf37f44c37ca40cd6bf7fe
   languageName: node
   linkType: hard
 

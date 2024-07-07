@@ -1,5 +1,5 @@
 import { FilterConfigBase, MatchOptionsBase } from '../FilterBase';
-import { FilterConfig, IFilter } from '../types';
+import { Filter, FilterConfig } from '../types';
 
 /**
  * matchメソッドのオプション
@@ -14,5 +14,5 @@ export type CompoundFilterConfigBase = FilterConfigBase &
     /**
      * filterの配列
      */
-    items: string | FilterConfig | IFilter | (string | FilterConfig | IFilter)[];
+    items: string | FilterConfig | Filter | (string | FilterConfig | Filter)[];
   };

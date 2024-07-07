@@ -1,6 +1,6 @@
 import Base from '@visue/core/base/Base';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IExtractor } from '../types';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
+import { Extractor } from '../types';
 import { ExtractOptionsBase, ExtractorConfigBase } from './types';
 
 /**
@@ -13,14 +13,9 @@ abstract class ExtractorBase<
     C extends ExtractorConfigBase = ExtractorConfigBase,
   >
   extends Base<C>
-  implements IExtractor<S, V, O>
+  implements Extractor<S, V, O>
 {
   readonly isExtractor = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'extractor';
 
   /**
    * ID
@@ -28,13 +23,13 @@ abstract class ExtractorBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
   /**

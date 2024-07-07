@@ -1,20 +1,15 @@
 import RelationalOperatorBase from '../RelationalOperatorBase';
-import { IncludeExamineOptions, IncludeRelationalOperatorConfig } from './types';
+import { IncludeEvaluateOptions, IncludeRelationalOperatorConfig } from './types';
 
 /**
- * コンフィグ
+ * include
  */
 class IncludeRelationalOperator<V extends string = string> extends RelationalOperatorBase<
   V,
-  IncludeExamineOptions<V>,
+  IncludeEvaluateOptions<V>,
   IncludeRelationalOperatorConfig<V>
 > {
-  /**
-   * 種別
-   */
-  static TYPE = 'include';
-
-  protected _examine(target: V, config: IncludeRelationalOperatorConfig<V>): boolean {
+  protected _evaluate(target: V, config: IncludeRelationalOperatorConfig<V>): boolean {
     return config.value.includes(target);
   }
 }

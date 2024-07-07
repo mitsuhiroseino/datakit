@@ -4,11 +4,6 @@ import { DateFormatOptions, DateFormatterConfig } from './types';
 
 class DateFormatter extends FormatterBase<Date, DateFormatOptions, DateFormatterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'date';
-
-  /**
    * 日付型のフォーマット
    * @param value 日付型の値
    * @param config コンフィグ

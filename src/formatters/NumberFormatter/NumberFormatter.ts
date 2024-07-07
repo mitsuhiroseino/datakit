@@ -4,11 +4,6 @@ import { NumberFormatOptions, NumberFormatterConfig } from './types';
 
 class NumberFormatter extends FormatterBase<number, NumberFormatOptions, NumberFormatterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'number';
-
-  /**
    * 数値型のフォーマット
    * @param value 数値型の値
    * @param config オプション

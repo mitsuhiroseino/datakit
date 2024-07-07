@@ -1,4 +1,4 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 
 /**
  * matchメソッドのオプション
@@ -13,12 +13,12 @@ export type MatchOptions = {
 /**
  * コンフィグ
  */
-export type MatcherConfig = FactoryableConfig;
+export type MatcherConfig = IdentifiableConfig;
 
 /**
  * 2つの値を比較するクラスのインターフェイス
  */
-export interface IMatcher<O extends MatchOptions = MatchOptions> extends IFactoryable {
+export interface Matcher<O extends MatchOptions = MatchOptions> extends Identifiable {
   /**
    * Matcherのインスタンスであるか
    */

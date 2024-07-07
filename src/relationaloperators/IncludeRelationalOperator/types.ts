@@ -1,11 +1,11 @@
-import { ExamineOptionsBase, RelationalOperatorConfigBase } from '../RelationalOperatorBase';
+import { EvaluateOptionsBase, RelationalOperatorConfigBase } from '../RelationalOperatorBase';
 
 /**
- * examineメソッドのオプション
+ * evaluateメソッドのオプション
  */
-export type IncludeExamineOptions<V = any> = ExamineOptionsBase<V>;
+export type IncludeEvaluateOptions<V = any> = EvaluateOptionsBase<V>;
 
 /**
  * コンフィグ
  */
-export type IncludeRelationalOperatorConfig<V = any> = RelationalOperatorConfigBase<V> & IncludeExamineOptions<V>;
+export type IncludeRelationalOperatorConfig<V = any> = RelationalOperatorConfigBase<V> & IncludeEvaluateOptions<V>;

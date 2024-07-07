@@ -1,25 +1,20 @@
 import Base from '@visue/core/base/Base';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IRelationalOperator } from '../types';
-import { ExamineOptionsBase, RelationalOperatorConfigBase } from './types';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
+import { RelationalOperator } from '../types';
+import { EvaluateOptionsBase, RelationalOperatorConfigBase } from './types';
 
 /**
  * リーダー
  */
 abstract class RelationalOperatorBase<
     V = any,
-    O extends ExamineOptionsBase<V> = ExamineOptionsBase<V>,
+    O extends EvaluateOptionsBase<V> = EvaluateOptionsBase<V>,
     C extends RelationalOperatorConfigBase<V> = RelationalOperatorConfigBase<V>,
   >
   extends Base<C>
-  implements IRelationalOperator<V>
+  implements RelationalOperator<V>
 {
   readonly isRelationalOperator = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'relationaloperator';
 
   /**
    * ID
@@ -27,20 +22,20 @@ abstract class RelationalOperatorBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
-  examine(target: V, options: O): boolean {
+  evaluate(target: V, options: O): boolean {
     const config = this._withConfig(options);
-    return this._examine(target, config);
+    return this._evaluate(target, config);
   }
 
-  protected abstract _examine(target: V, config: C): boolean;
+  protected abstract _evaluate(target: V, config: C): boolean;
 }
 export default RelationalOperatorBase;

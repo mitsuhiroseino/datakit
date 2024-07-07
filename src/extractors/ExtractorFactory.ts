@@ -1,7 +1,16 @@
-import Factory from '@visue/core/factory/Factory';
-import { ExtractorConfig, IExtractor } from './types';
+import EasyFactory from '@visue/factory/easy/EasyFactory';
+import AnyExtractor from './AnyExtractor';
+import DateExtractor from './DateExtractor';
+import ObjectExtractor from './ObjectExtractor';
+import { EXTRACTOR_TYPES } from './constants';
+import { Extractor } from './types';
 
-const FACTORY = new Factory<IExtractor, ExtractorConfig>({
+const ExtractorFactory = new EasyFactory<Extractor>({
   category: 'extractor',
+  products: [
+    { type: EXTRACTOR_TYPES.ANY, Class: AnyExtractor },
+    { type: EXTRACTOR_TYPES.DATE, Class: DateExtractor },
+    { type: EXTRACTOR_TYPES.OBJECT, Class: ObjectExtractor },
+  ],
 });
-export default FACTORY;
+export default ExtractorFactory;

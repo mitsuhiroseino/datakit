@@ -1,6 +1,6 @@
+import { Creator } from '@visue/factory/easy';
 import MatcherBase from '../MatcherBase';
-import MatcherFactory from '../MatcherFactory';
-import { IMatcher } from '../types';
+import { Matcher } from '../types';
 import { CompoundMatchOptionsBase, CompoundMatcherConfigBase } from './types';
 
 export default abstract class CompoundMatcherBase<
@@ -10,11 +10,11 @@ export default abstract class CompoundMatcherBase<
   /**
    * matcher
    */
-  protected _items!: IMatcher[];
+  protected _items!: Matcher[];
 
   constructor(config?: C) {
     super(config);
     const { items = [] } = this.config;
-    this._items = MatcherFactory.from(items);
+    this._items = Creator.from('matcher', items);
   }
 }

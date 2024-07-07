@@ -1,4 +1,4 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ToValidValueOptions } from '@visue/utils/lang/toValidValue';
 
 /**
@@ -9,13 +9,13 @@ export type FormatOptions = ToValidValueOptions<string>;
 /**
  * コンフィグ
  */
-export type FormatterConfig = FactoryableConfig & FormatOptions;
+export type FormatterConfig = IdentifiableConfig & FormatOptions;
 
 /**
  * フォーマッター
  * 任意の型の値を文字列形式で表示する為の形式に変換する
  */
-export interface IFormatter<V = any, O extends FormatOptions = FormatOptions> extends IFactoryable {
+export interface Formatter<V = any, O extends FormatOptions = FormatOptions> extends Identifiable {
   /**
    * Formatterのインスタンスであるか
    */

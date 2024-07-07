@@ -1,8 +1,8 @@
 import DestructibleBase from '@visue/core/base/DestructibleBase';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import ExtractorFactory from '../../extractors/ExtractorFactory';
 import ObjectExtractor from '../../extractors/ObjectExtractor';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IFilter } from '../types';
+import { Filter } from '../types';
 import { FilterConfigBase, MatchOptionsBase } from './types';
 
 export default abstract class FilterBase<
@@ -11,14 +11,9 @@ export default abstract class FilterBase<
     C extends FilterConfigBase = FilterConfigBase,
   >
   extends DestructibleBase<C>
-  implements IFilter<O>
+  implements Filter<O>
 {
   readonly isFilter = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'filter';
 
   /**
    * ID
@@ -26,9 +21,9 @@ export default abstract class FilterBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   /**
    * 値抽出器
@@ -37,10 +32,10 @@ export default abstract class FilterBase<
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
     const { extractor, path } = this.config;
     if (extractor) {
-      this._extractor = ExtractorFactory.create(extractor);
+      this._extractor = ExtractorFactory.get(extractor);
     } else if (path != null) {
       this._extractor = new ObjectExtractor({ path });
     }

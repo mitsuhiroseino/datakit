@@ -1,5 +1,5 @@
 import { IDestructible } from '@visue/core/base/DestructibleBase';
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ExtractorConfig } from '../extractors';
 import { ObjectExtractOptions } from '../extractors/ObjectExtractor';
 
@@ -11,7 +11,7 @@ export type MatchOptions = {};
 /**
  * コンフィグ
  */
-export type FilterConfig = FactoryableConfig &
+export type FilterConfig = IdentifiableConfig &
   MatchOptions &
   Pick<ObjectExtractOptions, 'path'> & {
     /**
@@ -23,7 +23,7 @@ export type FilterConfig = FactoryableConfig &
 /**
  * インターフェイス
  */
-export interface IFilter<O extends MatchOptions = MatchOptions> extends IFactoryable, IDestructible {
+export interface Filter<O extends MatchOptions = MatchOptions> extends Identifiable, IDestructible {
   /**
    * Filterのインスタンスであるか
    */

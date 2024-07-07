@@ -1,6 +1,6 @@
 import Base from '@visue/core/base/Base';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IMatcher } from '../types';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
+import { Matcher } from '../types';
 import { MatchOptionsBase, MatcherConfigBase } from './types';
 
 /**
@@ -12,14 +12,9 @@ export default abstract class MatcherBase<
     C extends MatcherConfigBase = MatcherConfigBase,
   >
   extends Base<C>
-  implements IMatcher<O>
+  implements Matcher<O>
 {
   readonly isMatcher = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'matcher';
 
   /**
    * ID
@@ -27,13 +22,13 @@ export default abstract class MatcherBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
   /**

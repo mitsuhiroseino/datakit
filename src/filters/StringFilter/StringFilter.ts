@@ -1,4 +1,4 @@
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import StringMatcher from '../../matchers/StringMatcher';
 import MatcherFilterBase, { MatcherFilterConfigBase } from '../MatcherFilterBase';
 import { StringFilterConfig, StringMatchOptions } from './types';
@@ -11,12 +11,7 @@ export default class StringFilter extends MatcherFilterBase<
   StringMatchOptions<string>,
   StringFilterConfig<string>
 > {
-  /**
-   * 種別
-   */
-  static TYPE = 'string';
-
-  protected _createMatcher(config: MatcherFilterConfigBase): IMatcher {
+  protected _createMatcher(config: MatcherFilterConfigBase): Matcher {
     return new StringMatcher(config);
   }
 }

@@ -1,20 +1,15 @@
 import RelationalOperatorBase from '../RelationalOperatorBase';
-import { GreaterThanExamineOptions, GreaterThanRelationalOperatorConfig } from './types';
+import { GreaterThanEvaluateOptions, GreaterThanRelationalOperatorConfig } from './types';
 
 /**
- * コンフィグ
+ * >
  */
 class GreaterThanRelationalOperator<V = any> extends RelationalOperatorBase<
   V,
-  GreaterThanExamineOptions<V>,
+  GreaterThanEvaluateOptions<V>,
   GreaterThanRelationalOperatorConfig<V>
 > {
-  /**
-   * 種別
-   */
-  static TYPE = 'gt';
-
-  protected _examine(target: V, config: GreaterThanRelationalOperatorConfig<V>): boolean {
+  protected _evaluate(target: V, config: GreaterThanRelationalOperatorConfig<V>): boolean {
     return target > config.value;
   }
 }

@@ -1,2 +1,2 @@
-export { default } from './GreaterThanOrEqualRelationalOperator';
+export { default } from './GreaterThanOrEqualToRelationalOperator';
 export type * from './types';

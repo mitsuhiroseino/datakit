@@ -1,7 +1,24 @@
-import Factory from '@visue/core/factory/Factory';
-import { FormatterConfig, IFormatter } from './types';
+import EasyFactory from '@visue/factory/easy/EasyFactory';
+import AnyFormatter from './AnyFormatter';
+import BooleanFormatter from './BooleanFormatter';
+import DateFormatter from './DateFormatter';
+import NoopFormatter from './NoopFormatter';
+import NumberFormatter from './NumberFormatter';
+import ObjectFormatter from './ObjectFormatter';
+import StringFormatter from './StringFormatter';
+import { FORMATTER_TYPES } from './constants';
+import { Formatter } from './types';
 
-const FACTORY = new Factory<IFormatter, FormatterConfig>({
+const FormatterFactory = new EasyFactory<Formatter>({
   category: 'formatter',
+  products: [
+    { type: FORMATTER_TYPES.ANY, Class: AnyFormatter },
+    { type: FORMATTER_TYPES.BOOLEAN, Class: BooleanFormatter },
+    { type: FORMATTER_TYPES.DATE, Class: DateFormatter },
+    { type: FORMATTER_TYPES.NOOP, Class: NoopFormatter },
+    { type: FORMATTER_TYPES.NUMBER, Class: NumberFormatter },
+    { type: FORMATTER_TYPES.OBJECT, Class: ObjectFormatter },
+    { type: FORMATTER_TYPES.STRING, Class: StringFormatter },
+  ],
 });
-export default FACTORY;
+export default FormatterFactory;

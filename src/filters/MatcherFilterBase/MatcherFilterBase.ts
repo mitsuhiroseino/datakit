@@ -1,4 +1,4 @@
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import FilterBase from '../FilterBase';
 import { MatcherFilterConfigBase, MatcherMatchOptionsBase } from './types';
 
@@ -10,7 +10,7 @@ export default abstract class MatcherFilterBase<
   /**
    * マッチャー
    */
-  private _matcher?: IMatcher;
+  private _matcher?: Matcher;
 
   protected get matcher() {
     if (this._matcher == null) {
@@ -21,7 +21,7 @@ export default abstract class MatcherFilterBase<
     return this._matcher;
   }
 
-  protected abstract _createMatcher(config: C): IMatcher;
+  protected abstract _createMatcher(config: C): Matcher;
 
   /**
    * 条件に一致するか

@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "@visue/core": "^0.1.0",
-    "@visue/utils": "^0.1.0",
+    "@visue/factory": "^0.1.0",
+    "@visue/utils": "^0.1.1",
     "bignumber.js": "^9.1.1",
     "date-fns": "^2.29.3",
     "geolib": "^3.3.4",

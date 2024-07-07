@@ -6,11 +6,6 @@ import { AndFilterConfig, AndMatchOptions } from './types';
  */
 export default class AndFilter extends CompoundFilterBase<AndMatchOptions, AndFilterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'and';
-
-  /**
    * 条件に一致するか
    * @param value 検証対象
    * @returns 検証結果

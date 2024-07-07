@@ -1,5 +1,5 @@
 import { MatchOptionsBase, MatcherConfigBase } from '../MatcherBase';
-import { IMatcher } from '../types';
+import { Matcher } from '../types';
 
 export type CompoundMatchOptionsBase = MatchOptionsBase;
 
@@ -11,5 +11,5 @@ export type CompoundMatcherConfigBase = MatcherConfigBase &
     /**
      * matcherの配列
      */
-    items: string | MatcherConfigBase | IMatcher | (string | MatcherConfigBase | IMatcher)[];
+    items: string | MatcherConfigBase | Matcher | (string | MatcherConfigBase | Matcher)[];
   };

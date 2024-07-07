@@ -1,4 +1,4 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ToValidValueOptions } from '@visue/utils/lang/toValidValue';
 
 /**
@@ -9,12 +9,12 @@ export type ParseOptions<V = any> = ToValidValueOptions<V>;
 /**
  * コンフィグ
  */
-export type ParserConfig = FactoryableConfig & ParseOptions;
+export type ParserConfig = IdentifiableConfig & ParseOptions;
 
 /**
  * パーサー
  */
-export interface IParser<R = any, O extends ParseOptions = ParseOptions> extends IFactoryable {
+export interface Parser<R = any, O extends ParseOptions = ParseOptions> extends Identifiable {
   /**
    * Parserのインスタンスであるか
    */

@@ -1,7 +1,7 @@
 import Base from '@visue/core/base/Base';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import toValidValue from '@visue/utils/lang/toValidValue';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IFormatter } from '../types';
+import { Formatter } from '../types';
 import { FormatOptionsBase, FormatterConfigBase } from './types';
 
 export default abstract class FormatterBase<
@@ -10,19 +10,9 @@ export default abstract class FormatterBase<
     C extends FormatterConfigBase = FormatterConfigBase,
   >
   extends Base<C>
-  implements IFormatter<V, O>
+  implements Formatter<V, O>
 {
   readonly isFormatter = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'formatter';
-
-  /**
-   * コンフィグ以外の状態を持たない
-   */
-  static readonly STATELESS = true;
 
   /**
    * ID
@@ -30,13 +20,13 @@ export default abstract class FormatterBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
   format(value: V, options?: O): string {

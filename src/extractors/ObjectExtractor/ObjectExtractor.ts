@@ -7,11 +7,6 @@ import { ObjectExtractOptions, ObjectExtractorConfig } from './types';
  * オブジェクト形式の値からの抽出器
  */
 class ObjectExtractor<V = any> extends ExtractorBase<any, V, ObjectExtractOptions, ObjectExtractorConfig> {
-  /**
-   * 種別
-   */
-  static TYPE = 'object';
-
   protected _validate(source: any): boolean {
     return isObjectLike(source);
   }

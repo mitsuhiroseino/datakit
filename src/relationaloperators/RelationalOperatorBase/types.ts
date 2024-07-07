@@ -1,10 +1,10 @@
 import { ConfigBase } from '@visue/core/base/Base';
-import { ExamineOptions, RelationalOperatorConfig } from '../types';
+import { EvaluateOptions, RelationalOperatorConfig } from '../types';
 
 /**
- * examineメソッドのオプション
+ * evaluateメソッドのオプション
  */
-export type ExamineOptionsBase<V = any> = ExamineOptions<V>;
+export type EvaluateOptionsBase<V = any> = EvaluateOptions<V>;
 
 /**
  * コンフィグ

@@ -1,6 +1,6 @@
 import Base from '@visue/core/base/Base';
-import initFactoryable from '../../helpers/initFactoryable';
-import { IComparator } from '../types';
+import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
+import { Comparator } from '../types';
 import { ComparatorConfigBase, CompareOptionsBase } from './types';
 
 /**
@@ -12,14 +12,9 @@ export default abstract class ComparatorBase<
     C extends ComparatorConfigBase = ComparatorConfigBase,
   >
   extends Base<C>
-  implements IComparator<O>
+  implements Comparator<O>
 {
   readonly isComparator = true;
-
-  /**
-   * カテゴリー
-   */
-  static readonly CATEGORY = 'comparator';
 
   /**
    * ID
@@ -27,13 +22,13 @@ export default abstract class ComparatorBase<
   readonly $id!: string;
 
   /**
-   * 種別
+   * 識別名
    */
-  readonly type!: string;
+  readonly $idName?: string;
 
   constructor(config?: C) {
     super(config);
-    initFactoryable(this, this.config);
+    assignIdentifier(this, this.config);
   }
 
   /**

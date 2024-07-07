@@ -1,4 +1,4 @@
-import { FactoryableConfig, IFactoryable } from '@visue/core/factory/Factory';
+import { Identifiable, IdentifiableConfig } from '@visue/utils';
 
 /**
  * compareメソッドのオプション
@@ -8,12 +8,12 @@ export type CompareOptions = {};
 /**
  * コンフィグ
  */
-export type ComparatorConfig = FactoryableConfig;
+export type ComparatorConfig = IdentifiableConfig;
 
 /**
  * 2つの値を比較するクラスのインターフェイス
  */
-export interface IComparator<O extends CompareOptions = CompareOptions> extends IFactoryable {
+export interface Comparator<O extends CompareOptions = CompareOptions> extends Identifiable {
   /**
    * Comparatorのインスタンスであるか
    */

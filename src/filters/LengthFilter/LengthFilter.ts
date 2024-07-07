@@ -1,4 +1,4 @@
-import { IMatcher } from '../../matchers';
+import { Matcher } from '../../matchers';
 import LengthMatcher from '../../matchers/LengthMatcher';
 import MatcherFilterBase, { MatcherFilterConfigBase } from '../MatcherFilterBase';
 import { LengthFilterConfig, LengthMatchOptions } from './types';
@@ -7,12 +7,7 @@ import { LengthFilterConfig, LengthMatchOptions } from './types';
  * 文字列、配列の長さ、オブジェクトの要素数のフィルター
  */
 export default class LengthFilter extends MatcherFilterBase<any, LengthMatchOptions<any>, LengthFilterConfig<any>> {
-  /**
-   * 種別
-   */
-  static TYPE = 'length';
-
-  protected _createMatcher(config: MatcherFilterConfigBase): IMatcher {
+  protected _createMatcher(config: MatcherFilterConfigBase): Matcher {
     return new LengthMatcher(config);
   }
 }

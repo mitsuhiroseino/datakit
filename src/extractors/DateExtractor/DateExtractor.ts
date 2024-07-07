@@ -7,11 +7,6 @@ import { DateExtractOptions, DateExtractorConfig } from './types';
  * 日付形式の値からの抽出器
  */
 class DateExtractor<V = string | number> extends ExtractorBase<Date, V, DateExtractOptions, DateExtractorConfig> {
-  /**
-   * 種別
-   */
-  static TYPE = 'date';
-
   protected _validate(source: Date): boolean {
     return isVaidDate(source);
   }

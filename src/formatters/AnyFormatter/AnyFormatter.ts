@@ -3,11 +3,6 @@ import { AnyFormatOptions, AnyFormatterConfig } from './types';
 
 class AnyFormatter extends FormatterBase<any, AnyFormatOptions, AnyFormatterConfig> {
   /**
-   * 種別
-   */
-  static TYPE = 'any';
-
-  /**
    * 任意のフォーマット
    * @param value 任意の型の値
    * @param config コンフィグ
