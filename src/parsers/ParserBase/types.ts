@@ -1,4 +1,4 @@
-import { ConfigBase } from '@visue/core/base/Base';
+import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
 import { ParseOptions, ParserConfig } from '../types';
 
 /**
@@ -9,4 +9,4 @@ export type ParseOptionsBase = ParseOptions;
 /**
  * コンフィグ
  */
-export type ParserConfigBase = ConfigBase & ParserConfig;
+export type ParserConfigBase = ConfigurableConfigBase & ParserConfig;

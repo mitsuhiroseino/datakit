@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import toValidValue from '@visue/utils/lang/toValidValue';
 import { Parser } from '../types';
@@ -9,7 +9,7 @@ export default abstract class ParserBase<
     O extends ParseOptionsBase = ParseOptionsBase,
     C extends ParserConfigBase = ParserConfigBase,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements Parser<R, O>
 {
   readonly isParser = true;

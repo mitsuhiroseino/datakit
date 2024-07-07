@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { RelationalOperator } from '../types';
 import { EvaluateOptionsBase, RelationalOperatorConfigBase } from './types';
@@ -11,7 +11,7 @@ abstract class RelationalOperatorBase<
     O extends EvaluateOptionsBase<V> = EvaluateOptionsBase<V>,
     C extends RelationalOperatorConfigBase<V> = RelationalOperatorConfigBase<V>,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements RelationalOperator<V>
 {
   readonly isRelationalOperator = true;

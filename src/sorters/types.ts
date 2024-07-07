@@ -1,4 +1,4 @@
-import { IDestructible } from '@visue/core/base/DestructibleBase';
+import { Destructible } from '@visue/core/base/DestructibleBase';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ExtractorConfig } from '../extractors';
 import { ObjectExtractOptions } from '../extractors/ObjectExtractor';
@@ -28,7 +28,7 @@ export type SorterConfig = IdentifiableConfig &
 /**
  * ソーターのインターフェイス
  */
-export interface Sorter<O extends CompareOptions = CompareOptions> extends Identifiable, IDestructible {
+export interface Sorter<O extends CompareOptions = CompareOptions> extends Identifiable, Destructible {
   /**
    * Sorterのインスタンスであるか
    */

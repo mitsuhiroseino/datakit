@@ -1,4 +1,4 @@
-import { ConfigBase } from '@visue/core/base/Base';
+import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
 import { FormatOptions, FormatterConfig } from '../types';
 
 /**
@@ -9,4 +9,4 @@ export type FormatOptionsBase = FormatOptions;
 /**
  * コンフィグ
  */
-export type FormatterConfigBase = ConfigBase & FormatterConfig & FormatOptionsBase;
+export type FormatterConfigBase = ConfigurableConfigBase & FormatterConfig & FormatOptionsBase;

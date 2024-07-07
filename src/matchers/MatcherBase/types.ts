@@ -1,4 +1,4 @@
-import { ConfigBase } from '@visue/core/base/Base';
+import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
 import { MatchOptions, MatcherConfig } from '../types';
 
 /**
@@ -9,4 +9,4 @@ export type MatchOptionsBase = MatchOptions;
 /**
  * コンフィグ
  */
-export type MatcherConfigBase = ConfigBase & MatcherConfig & MatchOptionsBase;
+export type MatcherConfigBase = ConfigurableConfigBase & MatcherConfig & MatchOptionsBase;

@@ -1,4 +1,4 @@
-import { ConfigBase } from '@visue/core/base/Base';
+import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
 import { ExtractOptions, ExtractorConfig } from '../types';
 
 /**
@@ -9,4 +9,4 @@ export type ExtractOptionsBase = ExtractOptions;
 /**
  * コンフィグ
  */
-export type ExtractorConfigBase = ConfigBase & ExtractorConfig & ExtractOptionsBase;
+export type ExtractorConfigBase = ConfigurableConfigBase & ExtractorConfig & ExtractOptionsBase;

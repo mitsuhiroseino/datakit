@@ -1,4 +1,4 @@
-import { ConfigBase } from '@visue/core/base/Base';
+import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
 import { EvaluateOptions, RelationalOperatorConfig } from '../types';
 
 /**
@@ -9,4 +9,4 @@ export type EvaluateOptionsBase<V = any> = EvaluateOptions<V>;
 /**
  * コンフィグ
  */
-export type RelationalOperatorConfigBase<V = any> = ConfigBase & RelationalOperatorConfig<V>;
+export type RelationalOperatorConfigBase<V = any> = ConfigurableConfigBase & RelationalOperatorConfig<V>;

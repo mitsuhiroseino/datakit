@@ -1,4 +1,4 @@
-import { IDestructible } from '@visue/core/base/DestructibleBase';
+import { Destructible } from '@visue/core/base/DestructibleBase';
 import { Identifiable, IdentifiableConfig } from '@visue/utils';
 import { ExtractorConfig } from '../extractors';
 import { ObjectExtractOptions } from '../extractors/ObjectExtractor';
@@ -23,7 +23,7 @@ export type FilterConfig = IdentifiableConfig &
 /**
  * インターフェイス
  */
-export interface Filter<O extends MatchOptions = MatchOptions> extends Identifiable, IDestructible {
+export interface Filter<O extends MatchOptions = MatchOptions> extends Identifiable, Destructible {
   /**
    * Filterのインスタンスであるか
    */

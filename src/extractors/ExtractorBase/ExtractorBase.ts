@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Extractor } from '../types';
 import { ExtractOptionsBase, ExtractorConfigBase } from './types';
@@ -12,7 +12,7 @@ abstract class ExtractorBase<
     O extends ExtractOptionsBase = ExtractOptionsBase,
     C extends ExtractorConfigBase = ExtractorConfigBase,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements Extractor<S, V, O>
 {
   readonly isExtractor = true;

@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Matcher } from '../types';
 import { MatchOptionsBase, MatcherConfigBase } from './types';
@@ -11,7 +11,7 @@ export default abstract class MatcherBase<
     O extends MatchOptionsBase = MatchOptionsBase,
     C extends MatcherConfigBase = MatcherConfigBase,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements Matcher<O>
 {
   readonly isMatcher = true;

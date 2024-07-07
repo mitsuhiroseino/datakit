@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import toValidValue from '@visue/utils/lang/toValidValue';
 import { Formatter } from '../types';
@@ -9,7 +9,7 @@ export default abstract class FormatterBase<
     O extends FormatOptionsBase = FormatOptionsBase,
     C extends FormatterConfigBase = FormatterConfigBase,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements Formatter<V, O>
 {
   readonly isFormatter = true;

@@ -1,4 +1,4 @@
-import Base from '@visue/core/base/Base';
+import ConfigurableBase from '@visue/core/base/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Comparator } from '../types';
 import { ComparatorConfigBase, CompareOptionsBase } from './types';
@@ -11,7 +11,7 @@ export default abstract class ComparatorBase<
     O extends CompareOptionsBase = CompareOptionsBase,
     C extends ComparatorConfigBase = ComparatorConfigBase,
   >
-  extends Base<C>
+  extends ConfigurableBase<C>
   implements Comparator<O>
 {
   readonly isComparator = true;
