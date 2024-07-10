@@ -1,11 +1,11 @@
 import get from 'lodash/get';
-import { ComparatorFactory } from 'src/comparators';
+import { COMPALATOR_TYPES, ComparatorFactory } from 'src/comparators';
 import AnyComparator, { AnyComparatorConfig } from 'src/comparators/AnyComparator';
 
 describe('Factory', () => {
   describe('create', () => {
     test('type', () => {
-      const result: AnyComparator = ComparatorFactory.create(AnyComparator.TYPE);
+      const result: AnyComparator = ComparatorFactory.create(COMPALATOR_TYPES.ANY);
       expect(result).toBeInstanceOf(AnyComparator);
     });
   });

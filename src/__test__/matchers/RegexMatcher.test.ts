@@ -1,18 +1,10 @@
-import { MatcherFactory } from 'src/matchers';
+import { MATCHER_TYPES, MatcherFactory } from 'src/matchers';
 import RegexMatcher, { RegexMatcherConfig } from 'src/matchers/RegexMatcher';
 
 describe('Factory', () => {
   describe('create', () => {
     test('type', () => {
-      const result: RegexMatcher = MatcherFactory.create(RegexMatcher.TYPE);
-      expect(result).toBeInstanceOf(RegexMatcher);
-    });
-    test('alts 0', () => {
-      const result: RegexMatcher = MatcherFactory.create(RegexMatcher.ALTS[0]);
-      expect(result).toBeInstanceOf(RegexMatcher);
-    });
-    test('alts 1', () => {
-      const result: RegexMatcher = MatcherFactory.create(RegexMatcher.ALTS[1]);
+      const result: RegexMatcher = MatcherFactory.create(MATCHER_TYPES.REGEX);
       expect(result).toBeInstanceOf(RegexMatcher);
     });
   });

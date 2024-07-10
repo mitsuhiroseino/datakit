@@ -1,10 +1,10 @@
-import { ExtractorFactory, IExtractor } from 'src/extractors';
+import { EXTRACTOR_TYPES, Extractor, ExtractorFactory } from 'src/extractors';
 import ObjectExtractor, { ObjectExtractorConfig } from 'src/extractors/ObjectExtractor';
 
 describe('Factory', () => {
   describe('create', () => {
     test('type', () => {
-      const result: IExtractor = ExtractorFactory.create(ObjectExtractor.TYPE);
+      const result: Extractor = ExtractorFactory.create(EXTRACTOR_TYPES.OBJECT);
       expect(result).toBeInstanceOf(ObjectExtractor);
     });
   });
@@ -23,28 +23,28 @@ describe('ObjectExtractor', () => {
         };
 
         test('子要素', () => {
-          const config: ObjectExtractorConfig = { type: ObjectExtractor.TYPE, path: 'item0' },
-            extractor: ObjectExtractor = ExtractorFactory.create(config),
+          const config: ObjectExtractorConfig = { type: EXTRACTOR_TYPES.OBJECT, path: 'item0' },
+            extractor: ObjectExtractor = ExtractorFactory.get(config),
             result = extractor.extract(VALUE);
           expect(result).toBe('ITEM0');
         });
 
         test('孫要素(文字列で指定)', () => {
-          const config: ObjectExtractorConfig = { type: ObjectExtractor.TYPE, path: 'item1.item1_0' },
-            extractor: ObjectExtractor = ExtractorFactory.create(config),
+          const config: ObjectExtractorConfig = { type: EXTRACTOR_TYPES.OBJECT, path: 'item1.item1_0' },
+            extractor: ObjectExtractor = ExtractorFactory.get(config),
             result = extractor.extract(VALUE);
           expect(result).toBe('ITEM1_0');
         });
 
         test('孫要素(配列で指定)', () => {
-          const config: ObjectExtractorConfig = { type: ObjectExtractor.TYPE, path: ['item1', 'item1_0'] },
-            extractor: ObjectExtractor = ExtractorFactory.create(config),
+          const config: ObjectExtractorConfig = { type: EXTRACTOR_TYPES.OBJECT, path: ['item1', 'item1_0'] },
+            extractor: ObjectExtractor = ExtractorFactory.get(config),
             result = extractor.extract(VALUE);
           expect(result).toBe('ITEM1_0');
         });
         test('[Error]', () => {
-          const config: ObjectExtractorConfig = { type: ObjectExtractor.TYPE, path: 'item0' },
-            extractor: ObjectExtractor = ExtractorFactory.create(config),
+          const config: ObjectExtractorConfig = { type: EXTRACTOR_TYPES.OBJECT, path: 'item0' },
+            extractor: ObjectExtractor = ExtractorFactory.get(config),
             fn = () => extractor.extract(null);
           expect(fn).toThrowError('null is invalid source.');
         });

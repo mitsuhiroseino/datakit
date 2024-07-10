@@ -1,10 +1,10 @@
-import { IParser, ParserFactory } from 'src/parsers';
+import { PARSER_TYPES, Parser, ParserFactory } from 'src/parsers';
 import ObjectParser, { ObjectParserConfig } from 'src/parsers/ObjectParser';
 
 describe('ObjectParser', () => {
   describe('Factory', () => {
     test('create', () => {
-      const parser: IParser = ParserFactory.create(ObjectParser.TYPE);
+      const parser: Parser = ParserFactory.create(PARSER_TYPES.OBJECT);
       expect(parser).toBeInstanceOf(ObjectParser);
     });
   });
@@ -13,15 +13,15 @@ describe('ObjectParser', () => {
       OBJECT = { string: 'あ', number: 1, boolean: true, date: '1999-01-01T18:40:56.789Z' };
     test('default', () => {
       const config: ObjectParserConfig = {
-          type: ObjectParser.TYPE,
+          type: PARSER_TYPES.OBJECT,
         },
-        parser: ObjectParser = ParserFactory.create(config),
+        parser: ObjectParser = ParserFactory.get(config),
         result = parser.parse('{"string":"あ","number":1,"boolean":true,"date":"1999-01-01T18:40:56.789Z"}');
       expect(result).toEqual(OBJECT);
     });
     test('options', () => {
       const config: ObjectParserConfig = {
-          type: ObjectParser.TYPE,
+          type: PARSER_TYPES.OBJECT,
           reviver: (key: string, value: any): any => {
             if (key === 'date') {
               return new Date(value);
@@ -30,7 +30,7 @@ describe('ObjectParser', () => {
             }
           },
         },
-        parser: ObjectParser = ParserFactory.create(config),
+        parser: ObjectParser = ParserFactory.get(config),
         result = parser.parse('{"string":"あ","number":1,"boolean":true,"date":"1999-01-01T18:40:56.789Z"}');
       expect(result).toEqual({ ...OBJECT, date: DATE });
     });

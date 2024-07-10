@@ -7,11 +7,6 @@ import { RegexMatchOptions, RegexMatcherConfig } from './types';
  * 値1が正規表現(値2)に一致するか
  */
 class RegexMatcher extends MatcherBase<string | RegExp, RegexMatchOptions, RegexMatcherConfig> {
-  /**
-   * 代替種別
-   */
-  static ALTS = ['re', 'regexp'];
-
   protected _match(value1: string, value2: string | RegExp, config: RegexMatcherConfig): boolean {
     if (isString(value1)) {
       let regex: RegExp | null = null;
