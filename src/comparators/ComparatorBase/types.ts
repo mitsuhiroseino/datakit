@@ -1,4 +1,4 @@
-import { ConfigurableConfigBase } from '@visue/core/base/ConfigurableBase';
+import { ConfigurableConfigBase } from '@visue/core/ConfigurableBase';
 import { ComparatorConfig, CompareOptions } from '../types';
 
 /**

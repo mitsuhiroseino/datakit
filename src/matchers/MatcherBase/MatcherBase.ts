@@ -1,4 +1,4 @@
-import ConfigurableBase from '@visue/core/base/ConfigurableBase';
+import ConfigurableBase from '@visue/core/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { Matcher } from '../types';
 import { MatchOptionsBase, MatcherConfigBase } from './types';

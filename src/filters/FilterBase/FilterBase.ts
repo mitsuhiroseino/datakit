@@ -1,4 +1,4 @@
-import DestructibleBase from '@visue/core/base/DestructibleBase';
+import DestructibleBase from '@visue/core/DestructibleBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import ExtractorFactory from '../../extractors/ExtractorFactory';
 import ObjectExtractor from '../../extractors/ObjectExtractor';

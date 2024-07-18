@@ -1,4 +1,4 @@
-import ConfigurableBase from '@visue/core/base/ConfigurableBase';
+import ConfigurableBase from '@visue/core/ConfigurableBase';
 import assignIdentifier from '@visue/utils/identifier/assignIdentifier';
 import { RelationalOperator } from '../types';
 import { EvaluateOptionsBase, RelationalOperatorConfigBase } from './types';
