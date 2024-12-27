@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const FILTER_TYPES = {
+const FILTER_TYPES = {
   /**
    * 子要素の全てがtrueの場合にtrueを返すフィルター
    */
@@ -51,4 +51,5 @@ export const FILTER_TYPES = {
    * 文字列のフィルター
    */
   STRING: 'string',
-};
+} as const;
+export default FILTER_TYPES;

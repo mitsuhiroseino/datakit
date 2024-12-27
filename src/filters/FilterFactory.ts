@@ -4,12 +4,12 @@ import AnyFilter from './AnyFilter';
 import ArrayFilter from './ArrayFilter';
 import BooleanFilter from './BooleanFilter';
 import DateFilter from './DateFilter';
+import FILTER_TYPES from './FILTER_TYPES';
 import LengthFilter from './LengthFilter';
 import NumberFilter from './NumberFilter';
 import OrFilter from './OrFilter';
 import RegexFilter from './RegexFilter';
 import StringFilter from './StringFilter';
-import { FILTER_TYPES } from './constants';
 import { Filter } from './types';
 
 const FilterFactory = new EasyFactory<Filter>({

@@ -1,3 +1,3 @@
+export { default as PARSER_TYPES } from './PARSER_TYPES';
 export { default as ParserFactory } from './ParserFactory';
-export * from './constants';
 export type * from './types';

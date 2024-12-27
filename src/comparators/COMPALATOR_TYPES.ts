@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const COMPALATOR_TYPES = {
+const COMPALATOR_TYPES = {
   /**
    * 任意の比較
    */
@@ -41,4 +41,5 @@ export const COMPALATOR_TYPES = {
    * 文字列の比較
    */
   STRING: 'string',
-};
+} as const;
+export default COMPALATOR_TYPES;

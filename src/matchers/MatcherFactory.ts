@@ -6,11 +6,11 @@ import BooleanMatcher from './BooleanMatcher';
 import DateMatcher from './DateMatcher';
 import LengthMatcher from './LengthMatcher';
 import ListMatcher from './ListMatcher';
+import MATCHER_TYPES from './MATCHER_TYPES';
 import NumberMatcher from './NumberMatcher';
 import OrMatcher from './OrMatcher';
 import RegexMatcher from './RegexMatcher';
 import StringMatcher from './StringMatcher';
-import { MATCHER_TYPES } from './constants';
 import { Matcher } from './types';
 
 const MatcherFactory = new EasyFactory<Matcher>({

@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const MATCHER_TYPES = {
+const MATCHER_TYPES = {
   /**
    * 子要素の全てがtrueの場合にtrueを返すマッチャー
    */
@@ -56,4 +56,5 @@ export const MATCHER_TYPES = {
    * 文字列のマッチャー
    */
   STRING: 'string',
-};
+} as const;
+export default MATCHER_TYPES;

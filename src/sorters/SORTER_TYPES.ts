@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const SORTER_TYPES = {
+const SORTER_TYPES = {
   /**
    * 任意のソーター
    */
@@ -46,4 +46,5 @@ export const SORTER_TYPES = {
    * 値のソーター
    */
   VALUE: 'value',
-};
+} as const;
+export default SORTER_TYPES;

@@ -6,9 +6,9 @@ import DateSorter from './DateSorter';
 import LengthSorter from './LengthSorter';
 import ListSorter from './ListSorter';
 import NumberSorter from './NumberSorter';
+import SORTER_TYPES from './SORTER_TYPES';
 import StringSorter from './StringSorter';
 import ValueSorter from './ValueSorter';
-import { SORTER_TYPES } from './constants';
 import { Sorter } from './types';
 
 const SorterFactory = new EasyFactory<Sorter>({

@@ -6,7 +6,7 @@ import IncludeRelationalOperator from './IncludeRelationalOperator';
 import LessThanOrEqualRelationalOperator from './LessThanOrEqualToRelationalOperator';
 import LessThanRelationalOperator from './LessThanRelationalOperator';
 import NotEqualRelationalOperator from './NotEqualToRelationalOperator';
-import { RELATIONAL_OPERATOR_TYPES } from './constants';
+import RELATIONAL_OPERATOR_TYPES from './RELATIONAL_OPERATOR_TYPES';
 import { RelationalOperator } from './types';
 
 const RelationalOperatorFactory = new EasyFactory<RelationalOperator>({

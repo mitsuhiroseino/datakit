@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const FORMATTER_TYPES = {
+const FORMATTER_TYPES = {
   /**
    * 任意のフォーマッター
    */
@@ -36,4 +36,5 @@ export const FORMATTER_TYPES = {
    * 文字列のフォーマッター
    */
   STRING: 'string',
-};
+} as const;
+export default FORMATTER_TYPES;

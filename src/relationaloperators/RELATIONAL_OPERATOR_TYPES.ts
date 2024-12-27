@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const RELATIONAL_OPERATOR_TYPES = {
+const RELATIONAL_OPERATOR_TYPES = {
   /**
    * ===
    */
@@ -36,4 +36,5 @@ export const RELATIONAL_OPERATOR_TYPES = {
    * !==
    */
   NE: 'ne',
-};
+} as const;
+export default RELATIONAL_OPERATOR_TYPES;

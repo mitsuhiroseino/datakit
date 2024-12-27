@@ -1,8 +1,8 @@
 import EasyFactory from '@visue/factory/easy/EasyFactory';
 import AnyExtractor from './AnyExtractor';
 import DateExtractor from './DateExtractor';
+import EXTRACTOR_TYPES from './EXTRACTOR_TYPES';
 import ObjectExtractor from './ObjectExtractor';
-import { EXTRACTOR_TYPES } from './constants';
 import { Extractor } from './types';
 
 const ExtractorFactory = new EasyFactory<Extractor>({

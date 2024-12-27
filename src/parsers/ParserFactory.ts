@@ -5,8 +5,8 @@ import DateParser from './DateParser';
 import NoopParser from './NoopParser';
 import NumberParser from './NumberParser';
 import ObjectParser from './ObjectParser';
+import PARSER_TYPES from './PARSER_TYPES';
 import StringParser from './StringParser';
-import { PARSER_TYPES } from './constants';
 import { Parser } from './types';
 
 const ParserFactory = new EasyFactory<Parser>({

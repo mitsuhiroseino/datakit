@@ -1,3 +1,3 @@
+export { default as MATCHER_TYPES } from './MATCHER_TYPES';
 export { default as MatcherFactory } from './MatcherFactory';
-export * from './constants';
 export type * from './types';

@@ -1,3 +1,3 @@
+export { default as SORTER_TYPES } from './SORTER_TYPES';
 export { default as SorterFactory } from './SorterFactory';
-export * from './constants';
 export type * from './types';

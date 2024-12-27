@@ -2,11 +2,11 @@ import EasyFactory from '@visue/factory/easy/EasyFactory';
 import AnyFormatter from './AnyFormatter';
 import BooleanFormatter from './BooleanFormatter';
 import DateFormatter from './DateFormatter';
+import FORMATTER_TYPES from './FORMATTER_TYPES';
 import NoopFormatter from './NoopFormatter';
 import NumberFormatter from './NumberFormatter';
 import ObjectFormatter from './ObjectFormatter';
 import StringFormatter from './StringFormatter';
-import { FORMATTER_TYPES } from './constants';
 import { Formatter } from './types';
 
 const FormatterFactory = new EasyFactory<Formatter>({

@@ -2,12 +2,12 @@ import EasyFactory from '@visue/factory/easy/EasyFactory';
 import AnyComparator from './AnyComparator';
 import ArrayComparator from './ArrayComparator';
 import BooleanComparator from './BooleanComparator';
+import COMPALATOR_TYPES from './COMPALATOR_TYPES';
 import DateComparator from './DateComparator';
 import LengthComparator from './LengthComparator';
 import NumberComparator from './NumberComparator';
 import OrderComparator from './OrderComparator';
 import StringComparator from './StringComparator';
-import { COMPALATOR_TYPES } from './constants';
 import { Comparator } from './types';
 
 const ComparatorFactory = new EasyFactory<Comparator>({

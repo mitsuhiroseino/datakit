@@ -1,7 +1,7 @@
 /**
  * 種別
  */
-export const PARSER_TYPES = {
+const PARSER_TYPES = {
   /**
    * 任意のパーサー
    */
@@ -36,4 +36,5 @@ export const PARSER_TYPES = {
    * 文字列のパーサー
    */
   STRING: 'string',
-};
+} as const;
+export default PARSER_TYPES;
